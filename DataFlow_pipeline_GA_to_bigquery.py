@@ -17,7 +17,7 @@ from datetime import datetime
 
 
 
-project_id = 'наименование-project_id' # Используемый проект
+project_id = 'Project ID' # Используемый проект
 bucket = 'bucket' # Используемая корзина
 dttm = datetime.now().strftime('%Y%m%d%H%M') # для разграничения потоков 
 
@@ -39,10 +39,10 @@ class Load_hist_ga(beam.DoFn):
         #key_file - токен из JSON файла сервисного аккаунта, т.к. нет возможности в Dataflow прочитать файл из Shell
         key_file = {
             "type": "service_account",
-            "project_id": "наименование-project_id",
+            "project_id": "Project ID",
             "private_key_id": "1234567890",
             "private_key": "-----BEGIN PRIVATE KEY-----\n\n-----END PRIVATE KEY-----\n",
-            "client_email": "название-сервисного-аккаунта@наименование-project_id.iam.gserviceaccount.com",
+            "client_email": "название-сервисного-аккаунта@наименование-проекта.iam.gserviceaccount.com",
             "client_id": "1234567890",
             "auth_uri": "https://accounts.google.com/o/oauth2/auth",
             "token_uri": "https://oauth2.googleapis.com/token",
